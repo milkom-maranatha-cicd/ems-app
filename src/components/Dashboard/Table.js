@@ -30,7 +30,7 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
         <tbody>
           {employees.length > 0 ? (
             employees.map((employee, i) => (
-              <tr key={employee.id}>
+              <tr id={"row-" + (i + 1)} key={employee.id}>
                 <td>{i + 1}</td>
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
@@ -56,7 +56,7 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
               </tr>
             ))
           ) : (
-            <tr>
+            <tr id='empty-row'>
               <td colSpan={7}>No Employees</td>
             </tr>
           )}
